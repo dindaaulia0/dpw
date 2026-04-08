@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inline Grid</title>
+    <link rel="icon" type="img/png" href="gambar/pnm.png" sizes="16x16" />
+    <style>
+        .tempat_grid {
+            display: inline-grid;
+            grid-template-columns: auto auto auto;
+            background-color: #2196F3;
+            padding: 10px;
+            grid-gap: 50px;
+        }
+        .item_grid {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .kesimpulan-box {
+            background-color: #fffbe6;
+            border-left: 4px solid #f0c000;
+            padding: 12px 16px;
+            margin-top: 16px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<h1>Tampilan: inline-grid</h1>
+<p>Teks sebelum grid — <span style="color:red;">perhatikan grid hanya selebar kontennya</span> — teks sesudah grid bisa sejajar!</p>
+
+<div class="tempat_grid">
+    <div class="item_grid">1</div>
+    <div class="item_grid">2</div>
+    <div class="item_grid">3</div>
+    <div class="item_grid">4</div>
+    <div class="item_grid">5</div>
+    <div class="item_grid">6</div>
+    <div class="item_grid">7</div>
+    <div class="item_grid">8</div>
+    <div class="item_grid">9</div>
+</div>
+
+<div class="kesimpulan-box">
+    <strong>Kesimpulan Skenario 2:</strong> Berbeda dengan <code>display: grid</code> yang menjadikan container berperilaku seperti block (mengisi lebar penuh halaman), <code>display: inline-grid</code> membuat container hanya mengambil ruang selebar isinya. Dengan <code>inline-grid</code>, elemen grid dapat diletakkan secara inline berdampingan dengan konten teks atau elemen lain dalam satu baris.
+</div>
+</body>
+</html>

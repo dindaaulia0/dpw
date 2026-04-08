@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Combinator Selector</title>
+  <style>
+    div p { /* no 1 */
+      color: red;
+    }
+
+    div > p { /* no 2 */
+      background-color: yellow;
+    }
+
+    div + p { /* no 3 */
+      background-color: darkgray;
+    }
+
+    div ~ p { /* no 4 */
+      color: cyan;
+    }
+  </style>
+</head>
+<body>
+  <h2>Combinator Selector</h2>
+
+  <div>
+    <p>This is a paragraph. Selektor no 1 (div p): paragraf ini berada di dalam div, sehingga terkena style color: red dari descendant selector.</p>
+    <p>This is a paragraph. Selektor no 2 (div > p): paragraf ini adalah anak langsung dari div, sehingga terkena background-color: yellow dari child selector.</p>
+  </div>
+
+  <p>This is a paragraph. Selektor no 3 (div + p): paragraf ini adalah elemen p pertama yang langsung setelah div (adjacent sibling), sehingga mendapat background-color: darkgray.</p>
+  <p>This is a paragraph. Selektor no 4 (div ~ p): paragraf ini adalah saudara (sibling) dari div yang berada setelahnya, sehingga terkena color: cyan dari general sibling selector.</p>
+</body>
+</html>

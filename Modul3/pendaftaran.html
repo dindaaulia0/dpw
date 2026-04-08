@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Form Pendaftaran</title>
+  <link rel="icon" type="img/png" href="gambar/pnm.png" sizes="16x16" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="John Doe">
+  <meta name="nim" content="12345">
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: Arial, Helvetica, sans-serif; }
+    header {
+      background-color: #666;
+      padding: 30px;
+      text-align: center;
+      font-size: 35px;
+      color: white;
+    }
+    nav {
+      float: left;
+      width: 30%;
+      background: #ccc;
+      padding: 20px;
+      min-height: 600px;
+    }
+    nav ul { list-style-type: none; padding: 0; }
+    nav ul li a { text-decoration: underline; color: #0000EE; }
+    article {
+      float: left;
+      padding: 20px;
+      width: 70%;
+      background-color: #f1f1f1;
+      min-height: 600px;
+    }
+    section::after { content: ""; display: table; clear: both; }
+    footer {
+      background-color: #777;
+      padding: 10px;
+      text-align: center;
+      color: white;
+    }
+
+    /* Form Styles */
+    h2.form-title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    fieldset {
+      border: 1px solid #999;
+      margin-bottom: 20px;
+      padding: 15px 20px;
+    }
+    legend {
+      font-size: 14px;
+      padding: 0 5px;
+    }
+    .form-row {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+    }
+    .form-row label {
+      width: 220px;
+      font-size: 14px;
+    }
+    .form-row input {
+      font-size: 14px;
+      padding: 2px 4px;
+    }
+    input[type="submit"] {
+      padding: 4px 12px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      nav, article { width: 100%; height: auto; }
+      .form-row { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Website Form Pendaftaran</h2>
+  </header>
+
+  <section>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gambar.html">Gambar</a></li>
+        <li><a href="event.html">Event</a></li>
+        <li><a href="audio.html">Audio</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li><a href="svg.html">SVG</a></li>
+        <li><a href="canvas.html">Canvas</a></li>
+      </ul>
+    </nav>
+
+    <article>
+      <h2 class="form-title">Form Penjadwal Pertemuan</h2>
+
+      <form action="#" method="post" id="formPendaftaran">
+
+        <!-- Fieldset 1: Informasi Pribadi -->
+        <fieldset>
+          <legend>Informasi Pribadi</legend>
+
+          <div class="form-row">
+            <label for="nama">Nama</label>
+            <input type="text" id="nama" name="nama" required>
+          </div>
+
+          <div class="form-row">
+            <label for="telepon">No. Telepon</label>
+            <!-- Format Indonesia: XXXX-XXXXXX -->
+            <input type="tel" id="telepon" name="telepon"
+                   pattern="\d{4}-\d{6}"
+                   placeholder="0812-345678"
+                   title="Format: XXXX-XXXXXX (contoh: 0812-345678)"
+                   required>
+          </div>
+
+          <div class="form-row">
+            <label for="email">Alamat Email</label>
+            <input type="email" id="email" name="email"
+                   placeholder="nama@domain.com"
+                   required>
+          </div>
+
+          <div class="form-row">
+            <label for="tanggal_lahir">Tanggal Lahir</label>
+            <!-- Antara 1 Januari 1987 s/d 1 Januari 1993 -->
+            <input type="date" id="tanggal_lahir" name="tanggal_lahir"
+                   min="1987-01-01"
+                   max="1993-01-01"
+                   required>
+          </div>
+        </fieldset>
+
+        <!-- Fieldset 2: Permintaan Pertemuan -->
+        <fieldset>
+          <legend>Permintaan Pertemuan</legend>
+
+          <div class="form-row">
+            <label for="tujuan">Tujuan Pertemuan</label>
+            <input type="text" id="tujuan" name="tujuan" required>
+          </div>
+
+          <div class="form-row">
+            <label for="kepentingan">Tingkat Kepentingan Pertemuan</label>
+            <!-- Tidak Penting (0) s/d Mendesak (10) -->
+            <input type="range" id="kepentingan" name="kepentingan"
+                   min="0" max="10" value="5"
+                   oninput="document.getElementById('nilai_kepentingan').textContent = this.value">
+            <span id="nilai_kepentingan" style="margin-left:8px;">5</span>
+          </div>
+
+          <div class="form-row">
+            <label for="tanggal_pertemuan">Tanggal</label>
+            <!-- Tanggal harus di atas hari ini -->
+            <input type="date" id="tanggal_pertemuan" name="tanggal_pertemuan"
+                   required>
+          </div>
+
+          <div class="form-row">
+            <label for="waktu">Waktu</label>
+            <!-- Jam antara 17:00 s/d 21:00 WIB -->
+            <input type="time" id="waktu" name="waktu"
+                   min="17:00" max="21:00"
+                   required>
+          </div>
+        </fieldset>
+
+        <input type="submit" value="Submit">
+      </form>
+    </article>
+  </section>
+
+  <footer>
+    <p>Footer &copy; 2026 - Praktikum HTML5 - Dinda Aulia</p>
+  </footer>
+
+  <script>
+    // Set minimum tanggal pertemuan = hari ini + 1
+    var today = new Date();
+    today.setDate(today.getDate() + 1);
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
+    var minDate = yyyy + '-' + mm + '-' + dd;
+    document.getElementById('tanggal_pertemuan').setAttribute('min', minDate);
+  </script>
+</body>
+</html>

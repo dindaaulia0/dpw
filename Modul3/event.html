@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Halaman Event</title>
+  <link rel="icon" type="img/png" href="gambar/pnm.png" sizes="16x16" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Dinda Aulia">
+  <meta name="nim" content="253307011">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    header {
+      background-color: #666;
+      padding: 30px;
+      text-align: center;
+      font-size: 35px;
+      color: white;
+    }
+    nav {
+      float: left;
+      width: 30%;
+      background: #ccc;
+      padding: 20px;
+      min-height: 400px;
+    }
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    nav ul li a {
+      text-decoration: underline;
+      color: #0000EE;
+    }
+    article {
+      float: left;
+      padding: 20px;
+      width: 70%;
+      background-color: #f1f1f1;
+      min-height: 400px;
+    }
+    section::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    footer {
+      background-color: #777;
+      padding: 10px;
+      text-align: center;
+      color: white;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+      margin-top: 10px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border: 2px solid #ccc;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    #event-log {
+      margin-top: 15px;
+      padding: 10px;
+      background: #fff;
+      border: 1px solid #aaa;
+      min-height: 60px;
+      font-size: 14px;
+      color: #333;
+    }
+    @media (max-width: 600px) {
+      nav, article {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Judul Website</h2>
+  </header>
+
+  <section>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gambar.html">Gambar</a></li>
+        <li><a href="event.html">Event</a></li>
+        <li><a href="audio.html">Audio</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li><a href="svg.html">SVG</a></li>
+        <li><a href="canvas.html">Canvas</a></li>
+      </ul>
+    </nav>
+
+    <article>
+      <h1>Gambar dengan Mouse Event</h1>
+      <p>Coba arahkan mouse ke gambar, klik, atau keluar dari gambar!</p>
+      <div class="gallery">
+        <img src="gambar/pemandangan1.jpg" alt="Pemandangan 1" 
+        onmouseover="logEvent('Mouseover: Gambar 1')" 
+        onmouseout="logEvent('Mouseout: Gambar 1')" 
+        onclick="logEvent('Click: Gambar 1 diklik!')">
+
+        <img src="gambar/pemandangan2.jpg" alt="Pemandangan 2"
+          onmouseover="logEvent('Mouseover: Gambar 2')"
+          onmouseout="logEvent('Mouseout: Gambar 2')"
+          ondblclick="logEvent('Double Click: Gambar 2 diklik dua kali!')">
+
+        <img src="gambar/pemandangan3.jpg" alt="Pemandangan 3"
+          onmouseover="this.style.opacity='0.5'; logEvent('Mouseover: Gambar 3 - opacity berubah')"
+          onmouseout="this.style.opacity='1'; logEvent('Mouseout: Gambar 3 - opacity normal')"
+          onclick="logEvent('Click: Gambar 3 diklik!')">
+
+        <img src="gambar/pemandangan4.jpg" alt="Pemandangan 4"
+          onmouseover="this.style.border='3px solid red'; logEvent('Mouseover: Gambar 4 - border merah')"
+          onmouseout="this.style.border='2px solid #ccc'; logEvent('Mouseout: Gambar 4 - border normal')"
+          onclick="logEvent('Click: Gambar 4 diklik!')">
+
+        <img src="gambar/pemandangan5.jpg" alt="Pemandangan 5"
+          onmouseover="this.style.transform='scale(1.1)'; logEvent('Mouseover: Gambar 5 - diperbesar')"
+          onmouseout="this.style.transform='scale(1)'; logEvent('Mouseout: Gambar 5 - ukuran normal')"
+          onclick="logEvent('Click: Gambar 5 diklik!')">
+
+        <img src="gambar/pemandangan6.jpg" alt="Pemandangan 6"
+          onmousedown="logEvent('Mousedown: Tombol mouse ditekan pada Gambar 6')"
+          onmouseup="logEvent('Mouseup: Tombol mouse dilepas pada Gambar 6')"
+          onclick="logEvent('Click: Gambar 6 diklik!')">
+      </div>
+
+      <div id="event-log">
+        <strong>Log Event:</strong><br>
+        <span id="log-text">Belum ada event...</span>
+      </div>
+    </article>
+  </section>
+
+  <footer>
+    <p>Footer &copy; 2026 - Praktikum HTML5 - Dinda Aulia</p>
+  </footer>
+
+  <script>
+    function logEvent(msg) {
+      document.getElementById('log-text').innerHTML = msg;
+    }
+  </script>
+</body>
+</html>

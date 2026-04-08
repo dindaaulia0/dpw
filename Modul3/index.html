@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Halaman Beranda</title>
+  <link rel="icon" type="img/png" href="gambar/pnm.png" sizes="16x16" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Dinda Aulia"><!-- ubah dengan nama anda-->
+  <meta name="nim" content="253307011"><!-- ubah dengan nim anda-->
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    header {
+      background-color: #666;
+      padding: 30px;
+      text-align: center;
+      font-size: 35px;
+      color: white;
+    }
+    nav {
+      float: left;
+      width: 30%;
+      height: 300px; 
+      background: #ccc;
+      padding: 20px;
+    }
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    article {
+      float: left;
+      padding: 20px;
+      width: 70%;
+      background-color: #f1f1f1;
+      height: 300px; 
+    }
+    section::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    footer {
+      background-color: #777;
+      padding: 10px;
+      text-align: center;
+      color: white;
+    }
+    @media (max-width: 600px) {
+      nav, article {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Website Sederhana</h2>
+  </header>
+
+  <section>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gambar.html">Gambar</a></li>
+        <li><a href="event.html">Event</a></li>
+        <li><a href="audio.html">Audio</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li><a href="svg.html">SVG</a></li>
+        <li><a href="canvas.html">Canvas</a></li>
+      </ul>
+    </nav>
+
+    <article>
+      <h1>Artikel HTML</h1>
+      <!-- kontent disini -->
+      <p><!--Tulis kesimpulan hasil ujicoba disini -->
+        Halaman ini merupakan halaman beranda dari website HTML5 Advance. 
+        Pada praktikum ini kita mempelajari elemen-elemen lanjut HTML5 seperti 
+        gambar, audio, video, SVG, canvas, dan form HTML5.
+        <br><br>
+        <strong>NIM:</strong> 253307011 &nbsp;|&nbsp; <strong>Nama:</strong> Dinda Aulia
+      </p>
+    </article>
+  </section>
+
+  <footer>
+    <p>Footer &copy; 2026 - Praktikum HTML5 - Dinda Aulia</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Latihan 1.11</title>
+    <link rel="icon" type="img/png" href="gambar/pnm.png" sizes="16x16" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 100%;
+            min-height: 100vh;
+        }
+        table {
+            width: 100%;
+            height: 100vh;
+            border-collapse: collapse;
+        }
+        .sidebar {
+            width: 20%;
+            background-color: #f0f0f0;
+            vertical-align: top;
+            padding: 20px;
+            border-right: 2px solid #333;
+        }
+        .content {
+            width: 80%;
+            vertical-align: top;
+            padding: 20px;
+        }
+        .sidebar h2 {
+            margin-bottom: 20px;
+            color: #333;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+        .sidebar ul {
+            list-style-type: none;
+        }
+        .sidebar li {
+            margin-bottom: 15px;
+        }
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            background-color: #fff;
+            color: #333;
+            text-decoration: none;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #333;
+            color: #fff;
+            border-color: #333;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 2px solid #333;
+            border-radius: 5px;
+        }
+        .content h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                <!-- Kolom Kiri (20%) - Sidebar dengan Link -->
+                <td class="sidebar">
+                    <h2>Menu Navigasi</h2>
+                    <p style="margin-bottom: 20px; font-style: italic;">Klik link untuk mengubah konten:</p>
+                    <ul>
+                        <li><a href="latihan_1_1.html" target="konten">Latihan 1.1 - Meta Tags</a></li>
+                        <li><a href="latihan_1_2.html" target="konten">Latihan 1.2 - Heading</a></li>
+                        <li><a href="latihan_1_3.html" target="konten">Latihan 1.3 - Formatting</a></li>
+                        <li><a href="latihan_1_4.html" target="konten">Latihan 1.4 - List</a></li>
+                        <li><a href="latihan_1_5.html" target="konten">Latihan 1.5 - Link Target</a></li>
+                        <li><a href="latihan_1_6.html" target="konten">Latihan 1.6 - Gambar</a></li>
+                        <li><a href="latihan_1_7.html" target="konten">Latihan 1.7 - Tabel</a></li>
+                        <li><a href="latihan_1_8.html" target="konten">Latihan 1.8 - Biodata</a></li>
+                        <li><a href="latihan_1_9.html" target="konten">Latihan 1.9 - Iframe</a></li>
+                        <li><a href="latihan_1_10.html" target="konten">Latihan 1.10 - KRS</a></li>
+                    </ul>
+                </td>
+                
+                <!-- Kolom Kanan (80%) - Iframe -->
+                <td class="content">
+                    <h1 style="text-align: center;">Selamat Datang di Halaman Utama</h1>
+                    <p style="text-align: center; margin-bottom: 20px;">Pilih menu di samping untuk melihat hasil latihan</p>
+                    <iframe src="latihan_1_1.html" name="konten" frameborder="0"></iframe>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

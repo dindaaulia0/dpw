@@ -1,0 +1,90 @@
+<HTML>
+<HEAD>
+  <TITLE>Download Dialog - Progressbar</TITLE>
+  <LINK rel="icon" type="img/png" href="gambar/pnm.png" sizes="16x16" />
+  <LINK rel="stylesheet" href="style.css">
+  <LINK rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.min.css">
+  <SCRIPT src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></SCRIPT>
+  <SCRIPT src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></SCRIPT>
+  <STYLE>
+    .ui-dialog-titlebar { background: #2a5298 !important; color: white !important; }
+    .ui-dialog-title    { color: white !important; }
+    .ui-progressbar-value { background: #4a7fd4 !important; }
+    #progressbar { margin: 12px 0; height: 20px; border-radius: 4px; }
+    #persen { color: #2a5298; font-weight: bold; }
+    .ui-dialog-buttonset .ui-button {
+      background: #e74c3c; color: white; border: none;
+      border-radius: 4px; padding: 7px 16px;
+    }
+    .ui-dialog-buttonset .ui-button:hover { background: #c0392b; }
+    .btn-tutup { background: #4a7fd4 !important; }
+    .btn-tutup:hover { background: #2a5298 !important; }
+  </STYLE>
+</HEAD>
+<BODY>
+  <DIV class="kotak">
+    <H2>Download Dialog dengan Progressbar</H2>
+    <P>Klik tombol di bawah untuk memulai simulasi download.</P>
+    <BUTTON id="btnDownload">Mulai Download</BUTTON>
+    <P><A href="index.html">← Kembali</A></P>
+  </DIV>
+
+  <DIV id="downloadDialog" title="Mengunduh File..." style="display:none;">
+    <P>&#128196; <B>modul_javascript.pdf</B></P>
+    <P>Sedang mengunduh, harap tunggu...</P>
+    <DIV id="progressbar"></DIV>
+    <P id="persen">0%</P>
+  </DIV>
+
+  <SCRIPT>
+    var nilai = 0;
+    var timer;
+
+    $(document).ready(function() {
+      $("#progressbar").progressbar({ value: 0 });
+
+      $("#downloadDialog").dialog({
+        autoOpen      : false,
+        modal         : true,
+        width         : 380,
+        closeOnEscape : false,
+        open: function() { $(".ui-dialog-titlebar-close").hide(); },
+        buttons: {
+          "Batalkan": function() {
+            clearInterval(timer);
+            nilai = 0;
+            $("#progressbar").progressbar("value", 0);
+            $("#persen").text("0%");
+            $(this).dialog("close");
+          }
+        }
+      });
+
+      $("#btnDownload").click(function() {
+        nilai = 0;
+        $("#progressbar").progressbar("value", 0);
+        $("#persen").text("0%");
+        $("#downloadDialog").dialog("option", "title", "Mengunduh File...");
+        $("#downloadDialog").dialog("open");
+
+        timer = setInterval(function() {
+          nilai += 5;
+          $("#progressbar").progressbar("value", nilai);
+          $("#persen").text(nilai + "%");
+
+          if (nilai >= 100) {
+            clearInterval(timer);
+            $("#persen").text("Download selesai!");
+            $("#downloadDialog").dialog("option", "title", "Selesai!");
+            $("#downloadDialog").dialog("option", "buttons", {
+              "Tutup": function() { $(this).dialog("close"); }
+            });
+            $(".ui-dialog-buttonset .ui-button").addClass("btn-tutup");
+          }
+        }, 200);
+      });
+    });
+  </SCRIPT>
+</BODY>
+</HTML>

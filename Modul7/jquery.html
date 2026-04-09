@@ -1,0 +1,132 @@
+<HTML>
+<HEAD>
+  <TITLE>Menu dengan jQuery</TITLE>
+  <LINK rel="stylesheet" href="style.css">
+  <SCRIPT src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></SCRIPT>
+  <STYLE>
+    body { padding: 0; }
+
+    /* Navbar */
+    #navbar {
+      background-color: #2a5298;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    #navbar span {
+      color: white;
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-right: 16px;
+    }
+
+    /* Menu */
+    ul.menu {
+      list-style: none;
+      margin: 0; padding: 0;
+      display: flex;
+      gap: 4px;
+    }
+    ul.menu > li { position: relative; }
+    ul.menu > li > a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 4px;
+      font-size: 0.95em;
+    }
+    ul.menu > li > a:hover { background-color: #4a7fd4; }
+
+    /* Submenu */
+    ul.submenu {
+      display: none;
+      position: absolute;
+      top: 100%; left: 0;
+      background-color: #3a69b8;
+      list-style: none;
+      margin: 0; padding: 0;
+      min-width: 150px;
+      border-radius: 0 0 6px 6px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      z-index: 10;
+    }
+    ul.submenu li a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 8px 14px;
+      font-size: 0.9em;
+    }
+    ul.submenu li a:hover { background-color: #4a7fd4; }
+
+    /* Konten */
+    #konten {
+      padding: 30px;
+      max-width: 600px;
+    }
+    #konten .kotak { max-width: 100%; }
+  </STYLE>
+</HEAD>
+<BODY>
+
+  <DIV id="navbar">
+    <SPAN>&#127760; MyWebsite</SPAN>
+    <UL class="menu">
+      <LI><A href="#" data-id="beranda">Beranda</A></LI>
+      <LI>
+        <A href="#">Profil &#9660;</A>
+        <UL class="submenu">
+          <LI><A href="#" data-id="tentang">Tentang Kami</A></LI>
+          <LI><A href="#" data-id="visi">Visi &amp; Misi</A></LI>
+        </UL>
+      </LI>
+      <LI>
+        <A href="#">Layanan &#9660;</A>
+        <UL class="submenu">
+          <LI><A href="#" data-id="web">Web Design</A></LI>
+          <LI><A href="#" data-id="mobile">Mobile App</A></LI>
+        </UL>
+      </LI>
+      <LI><A href="#" data-id="kontak">Kontak</A></LI>
+      <LI><A href="index.html">&#8592; Kembali</A></LI>
+    </UL>
+  </DIV>
+
+  <DIV id="konten">
+    <DIV class="kotak">
+      <H2 id="judul">Beranda</H2>
+      <LINK rel="icon" type="img/png" href="gambar/pnm.png" sizes="16x16" />
+      <P id="isi">Selamat datang! Pilih menu di atas untuk navigasi.</P>
+    </DIV>
+  </DIV>
+
+  <SCRIPT>
+    var data = {
+      beranda : { judul: "Beranda",        isi: "Selamat datang di halaman utama." },
+      tentang : { judul: "Tentang Kami",   isi: "Kami adalah perusahaan teknologi." },
+      visi    : { judul: "Visi & Misi",    isi: "Visi kami menjadi penyedia IT terbaik." },
+      web     : { judul: "Web Design",     isi: "Kami membuat website modern dan responsif." },
+      mobile  : { judul: "Mobile App",     isi: "Pengembangan aplikasi Android dan iOS." },
+      kontak  : { judul: "Kontak",         isi: "Email: dinda@gmail.com | Telp: 0831-1234567" }
+    };
+
+    $(document).ready(function() {
+      $("ul.menu > li").hover(
+        function() { $(this).find(".submenu").slideDown(200); },
+        function() { $(this).find(".submenu").slideUp(200); }
+      );
+
+      $("a[data-id]").click(function(e) {
+        e.preventDefault();
+        var id = $(this).data("id");
+        $("#judul").text(data[id].judul);
+        $("#isi").text(data[id].isi);
+        $(".submenu").slideUp(200);
+      });
+    });
+  </SCRIPT>
+
+</BODY>
+</HTML>

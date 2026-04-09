@@ -1,0 +1,54 @@
+<HTML>
+<HEAD>
+  <TITLE>Tanggal dan Jam Real Time</TITLE>
+  <LINK rel="icon" type="img/png" href="gambar/pnm.png" sizes="16x16" />
+  <LINK rel="stylesheet" href="style.css">
+  <STYLE>
+    #jam-display {
+      font-size: 2em;
+      color: #2a5298;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    #tgl-display {
+      font-size: 1.1em;
+      color: #555;
+    }
+  </STYLE>
+</HEAD>
+<BODY>
+  <DIV class="kotak">
+    <H2>Tanggal dan Jam Real Time</H2>
+    <P id="tgl-display"></P>
+    <P id="jam-display"></P>
+    <P><A href="index.html">← Kembali</A></P>
+  </DIV>
+
+  <SCRIPT LANGUAGE="JavaScript">
+    function tampilWaktu() {
+      var sekarang = new Date();
+
+      var tgl   = sekarang.getDate();
+      var bln   = sekarang.getMonth() + 1;
+      var thn   = sekarang.getFullYear();
+      var jam   = sekarang.getHours();
+      var menit = sekarang.getMinutes();
+      var detik = sekarang.getSeconds();
+
+      if (tgl   < 10) tgl   = "0" + tgl;
+      if (bln   < 10) bln   = "0" + bln;
+      if (jam   < 10) jam   = "0" + jam;
+      if (menit < 10) menit = "0" + menit;
+      if (detik < 10) detik = "0" + detik;
+
+      document.getElementById("tgl-display").innerHTML =
+        "Tanggal : " + tgl + "/" + bln + "/" + thn;
+      document.getElementById("jam-display").innerHTML =
+        jam + " : " + menit + " : " + detik;
+    }
+
+    setInterval(tampilWaktu, 1000);
+    tampilWaktu();
+  </SCRIPT>
+</BODY>
+</HTML>

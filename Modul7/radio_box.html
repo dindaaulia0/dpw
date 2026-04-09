@@ -1,0 +1,37 @@
+<HTML>
+<HEAD>
+  <TITLE>Program Radio Box</TITLE>
+  <LINK rel="icon" type="img/png" href="gambar/pnm.png" sizes="16x16" />
+  <LINK rel="stylesheet" href="style.css">
+</HEAD>
+<BODY>
+  <DIV class="kotak">
+    <H2>Program Radio Box</H2>
+    <P>Klik pada musik yang paling Anda sukai:</P>
+
+    <FORM NAME="formTes" METHOD="GET">
+      <INPUT TYPE="RADIO" NAME="radioMusik" VALUE="Jazz"
+             onClick="info()"> Jazz<BR>
+      <INPUT TYPE="RADIO" NAME="radioMusik" VALUE="Keroncong"
+             onClick="info()"> Keroncong<BR>
+      <INPUT TYPE="RADIO" NAME="radioMusik" VALUE="Dangdut"
+             onClick="info()"> Dangdut<BR>
+      <INPUT TYPE="RADIO" NAME="radioMusik" VALUE="Lainnya"
+             onClick="info()"> Lainnya<BR>
+      <HR>
+      <P>Info: <INPUT TYPE="TEXT" NAME="fieldMusik" SIZE="30"></P>
+    </FORM>
+
+    <P><A href="index.html">← Kembali</A></P>
+  </DIV>
+
+  <SCRIPT LANGUAGE="JavaScript">
+    function info() {
+      for (var i = 0; i < 4; i++)
+        if (document.formTes.radioMusik[i].checked)
+          document.formTes.fieldMusik.value =
+            document.formTes.radioMusik[i].value;
+    }
+  </SCRIPT>
+</BODY>
+</HTML>

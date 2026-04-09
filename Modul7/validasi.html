@@ -1,0 +1,32 @@
+<HTML>
+<HEAD>
+  <TITLE>Program Validasi Isian</TITLE>
+  <LINK rel="icon" type="img/png" href="gambar/pnm.png" sizes="16x16" />
+  <LINK rel="stylesheet" href="style.css">
+</HEAD>
+<BODY>
+  <DIV class="kotak">
+    <H2>Program Validasi Isian</H2>
+    <FORM NAME="formku">
+      <P>
+        Nama &nbsp;: <INPUT TYPE="TEXT" NAME="nama"><BR><BR>
+        <INPUT TYPE="BUTTON" VALUE="Kirim" onClick="cekNama(this.form)">
+      </P>
+    </FORM>
+    <P><A href="index.html">← Kembali</A></P>
+  </DIV>
+
+  <SCRIPT LANGUAGE="JavaScript">
+    function cekNama(form) {
+      if (form.elements[0].value == "") {
+        alert("Nama harus dimasukkan");
+        form.nama.focus();
+        form.nama.select();
+        return(false);
+      }
+      alert("Terima kasih, " + form.elements[0].value);
+      return(true);
+    }
+  </SCRIPT>
+</BODY>
+</HTML>

@@ -5,6 +5,7 @@ Proyek ini dibuat untuk memenuhi tugas mata kuliah **Desain dan Pemrograman Web*
 ## Identitas Mahasiswa
 
 - **Nama:** Dinda Aulia
+- **NIM:** 253307011
 - **Kelas:** 2A
 - **Mata Kuliah:** Desain dan Pemrograman Web
 

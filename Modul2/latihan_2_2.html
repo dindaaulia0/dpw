@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Div dan Span</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='css/main.css'>
+    <style>
+        /* Inline fallback style jika main.css tidak tersedia */
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f5f5; }
+        #header  { background: #0077cc; color: #fff; padding: 15px 20px; }
+        #header h1 { margin: 0; }
+        #main    { display: flex; min-height: 400px; }
+        #link    { width: 180px; background: #dde; padding: 15px; }
+        #link ul { list-style: none; padding: 0; margin: 0; }
+        #link ul li a { text-decoration: none; color: #0077cc; display: block; padding: 6px 0; }
+        #link ul li a:hover { text-decoration: underline; }
+        #content { flex: 1; padding: 20px; background: #fff; }
+        #footer  { background: #333; color: #ccc; text-align: center; padding: 10px; font-style: italic; }
+    </style>
+</head>
+<body>
+
+    <div id="header">
+        <!-- Isi header disini id header-->
+        <h1>Judul/Header Website</h1>
+    </div>
+
+    <div id="main"> <!-- Isi disini id="main" -->
+        <div id="link">
+            <!-- Isi link disini id link -->
+            <ul>
+                <li><a href="#">London</a></li>
+                <li><a href="#">Paris</a></li>
+                <li><a href="#">Tokyo</a></li>
+            </ul>
+        </div>
+
+        <div id="content">
+            <!-- Isi content disini -->
+            <p>Halo! Nama saya adalah <strong>Dinda Aulia</strong> dan NIM saya adalah <strong>253307011</strong>.</p>
+            <p>Saya adalah mahasiswa program studi Teknologi Informasi di Politeknik Negeri Madiun (PNM).
+               Saya sangat tertarik dalam bidang pemrograman web, khususnya HTML, CSS, dan JavaScript.
+               Saya percaya bahwa kemampuan desain dan pemrograman web adalah bekal penting
+               untuk menghadapi era digital yang terus berkembang.</p>
+            <p>Dalam praktikum ini saya belajar berbagai elemen lanjutan HTML, termasuk penggunaan tag
+               <code>&lt;div&gt;</code> dan <code>&lt;span&gt;</code> sebagai fondasi pembuatan layout halaman web,
+               serta penggunaan elemen <code>&lt;form&gt;</code> beserta berbagai tipe inputnya.</p>
+        </div>
+    </div>
+
+    <div id="footer">
+        <!-- Isi footer disini -->
+        <em>copyright&copy;Dinda Aulia_253307011</em>
+    </div>
+
+</body>
+</html>

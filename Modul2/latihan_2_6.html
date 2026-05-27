@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Div dan Span</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='css/main.css'>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f5f5; }
+        #header  { background: #0077cc; color: #fff; padding: 15px 20px; }
+        #header h1 { margin: 0; }
+        #main    { display: flex; min-height: 500px; }
+        #link    { width: 180px; background: #dde; padding: 15px; }
+        #link ul { list-style: none; padding: 0; margin: 0; }
+        #link ul li a { text-decoration: none; color: #0077cc; display: block; padding: 6px 0; }
+        #content { flex: 1; padding: 20px; background: #fff; }
+        #footer  { background: #333; color: #ccc; text-align: center; padding: 10px; font-style: italic; }
+        p.kesimpulan { background: #f0f8ff; border-left: 4px solid #0077cc; padding: 8px 12px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <div id="header">
+        <h1>Judul/Header Website</h1>
+    </div>
+
+    <div id="main">
+        <div id="link">
+            <ul>
+                <li><a href="#">London</a></li>
+                <li><a href="#">Paris</a></li>
+                <li><a href="#">Tokyo</a></li>
+            </ul>
+        </div>
+
+        <div id="content">
+
+            <h3>Contoh Image Map</h3>
+            <p>Klik area pada gambar di bawah untuk mengikuti link Wikipedia yang sesuai.</p>
+
+            <!-- Gunakan gambar placeholder karena workplace.jpg tidak tersedia -->
+            <img src="gambar/workplace.jpg"
+                 alt="Workplace"
+                 usemap="#petagambar"
+                 style="max-width:400px; border:1px solid #ccc;">
+
+            <map name="petagambar">
+                <area shape="rect"   coords="34,44,270,350"  alt="Computer" href="https://en.wikipedia.org/wiki/Computer">
+                <area shape="rect"   coords="290,172,333,250" alt="Phone"   href="https://en.wikipedia.org/wiki/Telephone">
+                <area shape="circle" coords="337,300,44"      alt="Coffee"  href="https://en.wikipedia.org/wiki/Coffee">
+            </map>
+
+            <p class="kesimpulan">
+                <strong>Penjelasan Image Map :</strong><br>
+                Tag <code>&lt;map&gt;</code> mendefinisikan peta gambar – sebuah gambar dengan beberapa area yang dapat diklik.
+                Atribut <code>usemap</code> pada <code>&lt;img&gt;</code> harus sesuai dengan atribut <code>name</code>
+                pada tag <code>&lt;map&gt;</code> (diawali #).<br><br>
+                Tag <code>&lt;area&gt;</code> mendefinisikan setiap area klik dengan atribut:<br>
+                &bull; <code>shape="rect"</code> – area berbentuk kotak (koordinat: x1,y1,x2,y2).<br>
+                &bull; <code>shape="circle"</code> – area berbentuk lingkaran (koordinat: cx,cy,radius).<br>
+                &bull; <code>shape="poly"</code> – area berbentuk poligon (koordinat: x1,y1,x2,y2,...).<br>
+                &bull; <code>href</code> – URL tujuan ketika area diklik.<br>
+                &bull; <code>alt</code> – teks alternatif untuk aksesibilitas.
+            </p>
+
+        </div>
+    </div>
+
+    <div id="footer">
+        <em>copyright&copy;Budi Prawira_20240010012023</em>
+    </div>
+
+</body>
+</html>

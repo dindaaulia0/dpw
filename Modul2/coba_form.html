@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Sederhana</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        label { display: inline-block; min-width: 130px; }
+        input[type=text] { padding: 4px; }
+        p.kesimpulan { background: #f0f8ff; border-left: 4px solid #0077cc; padding: 8px 12px; }
+    </style>
+</head>
+<body>
+
+    <form action="/action_page.php" method="get" target="_self">
+        <label for="depan">Nama depan:</label>
+        <input type="text" id="depan" name="i_name" value="Dinda"><br>
+        <label for="n_belakang">Nama Belakang:</label>
+        <input type="text" id="n_belakang" name="i_belakan" value="Aulia"><br><br>
+        <input type="submit" value="Kirim">
+        <input type="reset"  value="Reset">
+    </form>
+
+    <p>Jika Anda mengklik tombol "Kirim", data formulir akan dikirim ke halaman bernama
+       "/action_page.php".</p>
+
+    <p class="kesimpulan">
+        <strong>Kesimpulan Uji Coba Form :</strong><br>
+        &bull; Tombol <em>Reset</em> mengembalikan semua isian ke nilai awal (value bawaan), bukan mengosongkan.<br>
+        &bull; Tombol <em>Kirim</em> mengirimkan data ke URL yang ditentukan atribut <code>action</code>.<br>
+        &bull; Atribut <code>target="_self"</code> membuka hasil di tab yang sama (default);
+          <code>target="_blank"</code> membuka di tab baru.<br>
+        &bull; Dengan <code>method="get"</code>, data form terlihat di URL (query string) – cocok untuk
+          pencarian/data tidak sensitif.<br>
+        &bull; Dengan <code>method="post"</code>, data form tersimpan di body request, tidak terlihat di URL –
+          lebih aman untuk data sensitif seperti password.
+    </p>
+
+</body>
+</html>

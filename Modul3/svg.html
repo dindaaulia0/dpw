@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Halaman SVG</title>
+  <link rel="icon" type="img/png" href="gambar/pnm.png" sizes="16x16" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="John Doe">
+  <meta name="nim" content="12345">
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: Arial, Helvetica, sans-serif; }
+    header {
+      background-color: #666;
+      padding: 30px;
+      text-align: center;
+      font-size: 35px;
+      color: white;
+    }
+    nav {
+      float: left;
+      width: 30%;
+      background: #ccc;
+      padding: 20px;
+      min-height: 600px;
+    }
+    nav ul { list-style-type: none; padding: 0; }
+    nav ul li a { text-decoration: underline; color: #0000EE; }
+    article {
+      float: left;
+      padding: 20px;
+      width: 70%;
+      background-color: #f1f1f1;
+      min-height: 600px;
+    }
+    section::after { content: ""; display: table; clear: both; }
+    footer {
+      background-color: #777;
+      padding: 10px;
+      text-align: center;
+      color: white;
+    }
+    @media (max-width: 600px) {
+      nav, article { width: 100%; height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Website Grafis</h2>
+  </header>
+
+  <section>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gambar.html">Gambar</a></li>
+        <li><a href="event.html">Event</a></li>
+        <li><a href="audio.html">Audio</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li><a href="svg.html">SVG</a></li>
+        <li><a href="canvas.html">Canvas</a></li>
+      </ul>
+    </nav>
+
+    <article>
+      <h1>Grafis SVG</h1>
+
+      <p><strong>Lingkaran (Circle):</strong></p>
+      <svg width="100" height="100">
+        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+      </svg>
+
+      <p><strong>Persegi Panjang Biru (Rectangle):</strong></p>
+      <svg width="500" height="100">
+        <rect width="400" height="100" style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+      </svg>
+
+      <p><strong>Persegi Panjang dengan Sudut Membulat:</strong></p>
+      <svg width="400" height="180">
+        <rect x="50" y="20" rx="20" ry="20" width="320" height="150"
+              style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+      </svg>
+
+      <p><strong>Poligon (Segitiga Hijau):</strong></p>
+      <svg width="300" height="250">
+        <polygon points="150,10 30,230 270,230"
+                 style="fill:lime;stroke:green;stroke-width:3" />
+      </svg>
+
+      <p>
+        <strong>Kesimpulan:</strong> Program ini membuat halama website yang menampilkan berbagai bentuk grafis
+        menggunakan SVG seperti lingkaran, persegi panjang, dan poligon. 
+        Hal ini menunjukkan bahwa SVG dapat digunakan untuk membuat gambar langsung di dalam HTML. 
+        <br><br>
+        <strong>NIM:</strong> 253307011 &nbsp;|&nbsp; <strong>Nama:</strong> Dinda Aulia
+      </p>
+    </article>
+  </section>
+
+  <footer>
+    <p>Footer &copy; 2026 - Praktikum HTML5 - Dinda Aulia</p>
+  </footer>
+</body>
+</html>

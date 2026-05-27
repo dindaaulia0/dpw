@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Belajar grid</title>
+    <link rel="icon" type="img/png" href="gambar/pnm.png" sizes="16x16" />
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
+        h2 { color: #1a237e; border-bottom: 2px solid #2196F3; padding-bottom: 6px; margin-top: 30px; }
+        .kesimpulan-box {
+            background-color: #fffbe6;
+            border-left: 4px solid #f0c000;
+            padding: 12px 16px;
+            margin-top: 12px;
+            font-style: italic;
+        }
+
+        /* ===== TASK 5 – grid_layout2 dasar ===== */
+        .grid-container-t5 {
+            display: grid;
+            grid-gap: 50px;
+            background-color: #2196F3;
+            grid-template-columns: auto auto auto auto;
+            padding: 10px;
+        }
+        .item1-t5 {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+            /* Skenario 1: grid-column-start + grid-column-end */
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        .item-t5 {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        /* ===== TASK 5 Skenario 2 – grid-template-columns ===== */
+        .grid-container-t5s2 {
+            display: grid;
+            grid-gap: 50px;
+            background-color: #4CAF50;
+            /* coba: auto auto | 70px 300px auto 40px | 10px 500px 20px 10px */
+            grid-template-columns: 70px 300px auto 40px;
+            padding: 10px;
+        }
+        .item-t5s2 {
+            background-color: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(0,0,0,0.3);
+            padding: 20px;
+            font-size: 22px;
+            text-align: center;
+        }
+        .item1-t5s2 {
+            background-color: rgba(255,255,180,0.9);
+            padding: 20px;
+            font-size: 22px;
+            text-align: center;
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+
+        /* ===== TASK 6 Skenario 1 – grid-row ===== */
+        .grid-container-t6 {
+            display: grid;
+            grid-gap: 50px;
+            background-color: #FF5722;
+            grid-template-columns: auto auto auto auto;
+            padding: 10px;
+        }
+        .item1-t6 {
+            background-color: rgba(255,255,200,0.9);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+            /* Skenario 1: grid-row */
+            grid-row: 1 / 4;
+        }
+        .item-t6 {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0,0,0,0.3);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        /* ===== TASK 6 Skenario 2 – grid-column ===== */
+        .grid-container-t6s2 {
+            display: grid;
+            grid-gap: 50px;
+            background-color: #9C27B0;
+            grid-template-columns: auto auto auto auto;
+            padding: 10px;
+        }
+        .item1-t6s2 {
+            background-color: rgba(255,255,200,0.9);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+            /* Skenario 2: grid-column */
+            grid-column: 1 / 4;
+        }
+        .item-t6s2 {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0,0,0,0.3);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Belajar CSS Grid – Lanjutan</h1>
+
+<!-- ===== TASK 5 – SKENARIO 1 ===== -->
+<h2>Task 5 – Skenario 1: grid-column-start &amp; grid-column-end</h2>
+<div class="grid-container-t5">
+    <div class="item1-t5">1 (span col 1–3)</div>
+    <div class="item-t5">2</div>
+    <div class="item-t5">3</div>
+    <div class="item-t5">4</div>
+    <div class="item-t5">5</div>
+    <div class="item-t5">6</div>
+    <div class="item-t5">7</div>
+    <div class="item-t5">8</div>
+    <div>Tulis kesimpulan disini</div>
+</div>
+<div class="kesimpulan-box">
+    <strong>Kesimpulan Skenario 1:</strong> Properti <code>grid-column-start</code> dan <code>grid-column-end</code> menentukan posisi awal dan akhir suatu item pada sumbu kolom. Dengan mengatur <code>grid-column-start: 1; grid-column-end: 3;</code>, item tersebut akan membentang dari kolom ke-1 hingga sebelum kolom ke-3 (menempati 2 kolom). Mengubah kombinasi nilai menghasilkan item yang memperluas atau mempersempit rentang kolomnya.
+</div>
+
+<!-- ===== TASK 5 – SKENARIO 2 ===== -->
+<h2>Task 5 – Skenario 2: grid-template-columns dengan nilai berbeda</h2>
+<div class="grid-container-t5s2">
+    <div class="item1-t5s2">1 (span 2)</div>
+    <div class="item-t5s2">2</div>
+    <div class="item-t5s2">3</div>
+    <div class="item-t5s2">4</div>
+    <div class="item-t5s2">5</div>
+    <div class="item-t5s2">6</div>
+    <div class="item-t5s2">7</div>
+    <div class="item-t5s2">8</div>
+</div>
+<div class="kesimpulan-box">
+    <strong>Kesimpulan Skenario 2:</strong> Properti <code>grid-template-columns</code> mendefinisikan lebar setiap kolom. Nilai <code>auto auto</code> membagi ruang merata, sedangkan nilai campuran seperti <code>70px 300px auto 40px</code> membuat kolom-kolom dengan lebar berbeda-beda sesuai kebutuhan. Kolom dengan nilai <code>auto</code> akan mengisi sisa ruang yang tersedia, sangat berguna untuk layout yang responsif.
+</div>
+
+<!-- ===== TASK 6 – SKENARIO 1: grid-row ===== -->
+<h2>Task 6 – Skenario 1: grid-row (membentang baris)</h2>
+<div class="grid-container-t6">
+    <div class="item1-t6">1 (row 1–4)</div>
+    <div class="item-t6">2</div>
+    <div class="item-t6">3</div>
+    <div class="item-t6">4</div>
+    <div class="item-t6">5</div>
+    <div class="item-t6">6</div>
+    <div class="item-t6">7</div>
+    <div class="item-t6">8</div>
+    <div>Tulis kesimpulan disini</div>
+</div>
+<div class="kesimpulan-box">
+    <strong>Kesimpulan Skenario 1:</strong> Properti <code>grid-row</code> adalah shorthand dari <code>grid-row-start</code> dan <code>grid-row-end</code>. Dengan nilai <code>grid-row: 1 / 4;</code>, item akan membentang secara vertikal dari baris ke-1 hingga sebelum baris ke-4 (menempati 3 baris). Ini berguna untuk membuat elemen seperti sidebar yang tingginya mencakup beberapa baris sekaligus.
+</div>
+
+<!-- ===== TASK 6 – SKENARIO 2: grid-column ===== -->
+<h2>Task 6 – Skenario 2: grid-column (membentang kolom)</h2>
+<div class="grid-container-t6s2">
+    <div class="item1-t6s2">1 (col 1–4)</div>
+    <div class="item-t6s2">2</div>
+    <div class="item-t6s2">3</div>
+    <div class="item-t6s2">4</div>
+    <div class="item-t6s2">5</div>
+    <div class="item-t6s2">6</div>
+    <div class="item-t6s2">7</div>
+    <div class="item-t6s2">8</div>
+    <div>Tulis kesimpulan disini</div>
+</div>
+<div class="kesimpulan-box">
+    <strong>Kesimpulan Skenario 2:</strong> Properti <code>grid-column</code> adalah shorthand dari <code>grid-column-start</code> dan <code>grid-column-end</code>. Dengan nilai <code>grid-column: 1 / 4;</code>, item membentang dari kolom ke-1 hingga sebelum kolom ke-4 (menempati 3 kolom). Dibandingkan <code>grid-row</code> yang membentang secara vertikal, <code>grid-column</code> membentang secara horizontal, cocok untuk elemen header atau footer yang melintasi beberapa kolom.
+</div>
+
+</body>
+</html>

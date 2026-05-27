@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Layout CSS Grid</title>
+    <link rel="icon" type="img/png" href="gambar/pnm.png" sizes="16x16" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eceff1;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1a237e;
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+        }
+
+        .layout-container {
+            display: grid;
+            grid-template-areas:
+                "header header header"
+                "menu   main   right"
+                "footer footer footer";
+            grid-template-columns: 150px 1fr 150px;
+            grid-template-rows: auto 1fr auto;
+            grid-gap: 10px;
+            min-height: 400px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Area definitions */
+        .header {
+            grid-area: header;
+            background-color: #2196F3;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .menu {
+            grid-area: menu;
+            background-color: #64B5F6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .main {
+            grid-area: main;
+            background-color: #BBDEFB;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .right {
+            grid-area: right;
+            background-color: #64B5F6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: #2196F3;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        /* Area labels for visual reference */
+        .menu ul {
+            list-style: none;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        .menu ul li {
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.4);
+            cursor: pointer;
+        }
+        .menu ul li:hover { background: rgba(255,255,255,0.2); }
+
+        .right ul {
+            list-style: none;
+            margin-top: 10px;
+            font-size: 0.85rem;
+        }
+        .right ul li { padding: 4px 0; }
+
+        .main p {
+            margin-top: 10px;
+            font-size: 0.95rem;
+            font-weight: normal;
+            color: #333;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .kesimpulan-box {
+            background-color: #fffbe6;
+            border-left: 4px solid #f0c000;
+            padding: 14px 18px;
+            margin-top: 24px;
+            font-style: italic;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Layout.html – CSS Grid Layout</h1>
+
+<div class="layout-container">
+    <div class="header">Header</div>
+
+    <div class="menu">
+        Menu
+        <ul>
+            <li>Beranda</li>
+            <li>Profil</li>
+            <li>Artikel</li>
+            <li>Kontak</li>
+        </ul>
+    </div>
+
+    <div class="main">
+        Main
+        <p>Ini adalah area konten utama halaman. Area Main mengambil sisa ruang di antara kolom Menu dan Right menggunakan nilai <code>1fr</code> pada grid-template-columns.</p>
+    </div>
+
+    <div class="right">
+        Right
+        <ul>
+            <li>Widget 1</li>
+            <li>Widget 2</li>
+            <li>Widget 3</li>
+        </ul>
+    </div>
+
+    <div class="footer">Footer</div>
+</div>
+
+<div class="kesimpulan-box">
+    <strong>Kesimpulan Layout CSS Grid:</strong> CSS Grid memungkinkan pembuatan layout halaman web yang kompleks dengan mudah menggunakan <code>grid-template-areas</code>. Dengan mendefinisikan nama area (header, menu, main, right, footer), setiap elemen cukup diberi properti <code>grid-area</code> sesuai nama area-nya. Ini jauh lebih intuitif dan mudah dipahami dibandingkan metode layout lama seperti float atau tabel. Penggunaan <code>1fr</code> pada kolom tengah (main) membuat area tersebut fleksibel mengisi ruang yang tersisa secara otomatis.
+</div>
+
+</body>
+</html>

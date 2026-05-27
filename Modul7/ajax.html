@@ -1,0 +1,100 @@
+<HTML>
+<HEAD>
+  <TITLE>AJAX dan jQuery</TITLE>
+  <LINK rel="icon" type="img/png" href="gambar/pnm.png" sizes="16x16" />
+  <LINK rel="stylesheet" href="style.css">
+  <SCRIPT src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></SCRIPT>
+  <STYLE>
+    #kotak-demo {
+      width: 100px; height: 100px;
+      background-color: #4a7fd4;
+      border-radius: 6px;
+      margin: 10px 0;
+    }
+    pre {
+      background: #dce8fb;
+      border-left: 4px solid #4a7fd4;
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 0.9em;
+      overflow-x: auto;
+    }
+    .kotak { max-width: 620px; }
+  </STYLE>
+</HEAD>
+<BODY>
+  <DIV class="kotak">
+    <H2>Apa itu AJAX?</H2>
+    <P>
+      AJAX (Asynchronous JavaScript and XML) adalah teknik untuk mengirim dan
+      menerima data dari server <B>tanpa me-reload</B> seluruh halaman web.
+    </P>
+    <P><B>Cara kerja AJAX:</B></P>
+    <OL>
+      <LI>User melakukan aksi (klik, isi form, dll).</LI>
+      <LI>JavaScript mengirim request ke server secara asinkronus.</LI>
+      <LI>Server memproses dan mengembalikan data.</LI>
+      <LI>JavaScript memperbarui bagian halaman yang diperlukan.</LI>
+    </OL>
+    <pre>
+fetch('https://api.example.com/data')
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('hasil').innerHTML = data.pesan;
+  });
+    </pre>
+
+    <HR>
+
+    <H2>Apa itu jQuery?</H2>
+    <P>
+      jQuery adalah library JavaScript yang mempermudah manipulasi HTML,
+      penanganan event, animasi, dan AJAX. Moto: <I>"Write less, do more."</I>
+    </P>
+    <P><B>Cara pakai jQuery:</B></P>
+    <pre>
+&lt;script src="jquery.min.js"&gt;&lt;/script&gt;
+
+$("#elemen").hide();          // sembunyikan
+$("#elemen").show();          // tampilkan
+$("p").text("Teks baru");     // ubah teks
+$("#elemen").css("color","red"); // ubah style
+    </pre>
+
+    <HR>
+
+    <H2>Contoh jQuery Sederhana</H2>
+    <P>Klik tombol di bawah untuk mencoba jQuery:</P>
+
+    <DIV id="kotak-demo"></DIV>
+    <BR>
+    <BUTTON id="btnSembunyikan">Sembunyikan</BUTTON>
+    <BUTTON id="btnTampilkan">Tampilkan</BUTTON>
+    <BUTTON id="btnWarna">Ganti Warna</BUTTON>
+    <P id="hasil"></P>
+
+    <P><A href="index.html">← Kembali</A></P>
+  </DIV>
+
+  <SCRIPT>
+    var warnaList = ["#4a7fd4","#e74c3c","#27ae60","#f39c12","#8e44ad"];
+    var idx = 0;
+
+    $(document).ready(function() {
+      $("#btnSembunyikan").click(function() {
+        $("#kotak-demo").hide();
+        $("#hasil").text("Kotak disembunyikan dengan .hide()");
+      });
+      $("#btnTampilkan").click(function() {
+        $("#kotak-demo").show();
+        $("#hasil").text("Kotak ditampilkan dengan .show()");
+      });
+      $("#btnWarna").click(function() {
+        idx = (idx + 1) % warnaList.length;
+        $("#kotak-demo").css("background-color", warnaList[idx]);
+        $("#hasil").text("Warna diganti menjadi " + warnaList[idx]);
+      });
+    });
+  </SCRIPT>
+</BODY>
+</HTML>

@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+  <TITLE>Program Confirm Box</TITLE>
+  <LINK rel="icon" type="img/png" href="gambar/pnm.png" sizes="16x16" />
+  <LINK rel="stylesheet" href="style.css">
+</HEAD>
+<BODY>
+  <DIV class="kotak">
+    <H2>Program Confirm Box</H2>
+    <P>Klik tombol di bawah untuk menampilkan kotak konfirmasi.</P>
+    <BUTTON onclick="myFunction()">Klik Ini</BUTTON>
+    <P id="demo"></P>
+    <P><A href="index.html">← Kembali</A></P>
+  </DIV>
+
+  <SCRIPT>
+    function myFunction() {
+      var txt;
+      if (confirm("Apakah Anda akan logout?")) {
+        txt = "Anda mengklik OK";
+      } else {
+        txt = "Anda mengklik Cancel.";
+      }
+      document.getElementById("demo").innerHTML = txt;
+    }
+  </SCRIPT>
+</BODY>
+</HTML>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praktikum 7 - JavaScript</title>
+  <LINK rel="icon" type="img/png" href="gambar/pnm.png" sizes="16x16" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #eef2f7;
+      padding: 40px 20px;
+    }
+
+    /* container */
+    .container {
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    /* header / judul */
+    .header {
+      background: #2c3e66;
+      padding: 20px 28px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      color: white;
+    }
+
+    .header h1 {
+      font-size: 26px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .header p {
+      font-size: 14px;
+      opacity: 0.85;
+    }
+
+    /* kotak putih utama */
+    .card-list {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+
+    /* daftar menu */
+    .menu-list {
+      list-style: none;
+    }
+
+    .menu-list li {
+      border-bottom: 1px solid #e5e9f0;
+    }
+
+    .menu-list li:last-child {
+      border-bottom: none;
+    }
+
+    .menu-list a {
+      display: flex;
+      align-items: center;
+      padding: 14px 22px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .menu-list a:hover {
+      background: #f5f8ff;
+    }
+
+    /* nomor bulat */
+    .nomor {
+      width: 30px;
+      height: 30px;
+      background: #4a7fd4;
+      color: white;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: bold;
+      margin-right: 16px;
+      flex-shrink: 0;
+    }
+
+    /* info teks */
+    .info {
+      flex: 1;
+    }
+
+    .judul {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1e2f5e;
+      margin-bottom: 4px;
+    }
+
+    .desc {
+      font-size: 12px;
+      color: #6c7a91;
+    }
+
+    /* ikon panah kecil */
+    .arrow {
+      color: #b9c4db;
+      font-size: 16px;
+      transition: 0.2s;
+    }
+
+    .menu-list a:hover .arrow {
+      color: #4a7fd4;
+      transform: translateX(3px);
+    }
+
+    /* footer */
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: #6c7a91;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>📘 Praktikum 7</h1>
+    <p>Bahasa Pemrograman JavaScript — pilih program interaktif di bawah</p>
+  </div>
+
+  <div class="card-list">
+    <ul class="menu-list">
+      <li><a href="alert.html">
+        <span class="nomor">1</span>
+        <div class="info">
+          <div class="judul">Program Alert</div>
+          <div class="desc">Pesan popup sederhana</div>
+        </div>
+        <span class="arrow">→</span>
+      </a></li>
+
+      <li><a href="input_data.html">
+        <span class="nomor">2</span>
+        <div class="info">
+          <div class="judul">Program Input Data</div>
+          <div class="desc">Menyapa dengan prompt</div>
+        </div>
+        <span class="arrow">→</span>
+      </a></li>
+
+      <li><a href="confirm_box.html">
+        <span class="nomor">3</span>
+        <div class="info">
+          <div class="judul">Program Confirm Box</div>
+          <div class="desc">Konfirmasi logout</div>
+        </div>
+        <span class="arrow">→</span>
+      </a></li>
+
+      <li><a href="validasi.html">
+        <span class="nomor">4</span>
+        <div class="info">
+          <div class="judul">Program Validasi Isian</div>
+          <div class="desc">Cek form tidak kosong</div>
+        </div>
+        <span class="arrow">→</span>
+      </a></li>
+
+      <li><a href="radio_box.html">
+        <span class="nomor">5</span>
+        <div class="info">
+          <div class="judul">Program Radio Box</div>
+          <div class="desc">Pilih genre musik favorit</div>
+        </div>
+        <span class="arrow">→</span>
+      </a></li>
+
+      <li><a href="verifikasi_password.html">
+        <span class="nomor">6</span>
+        <div class="info">
+          <div class="judul">Program Verifikasi Password</div>
+          <div class="desc">Cocokkan password</div>
+        </div>
+        <span class="arrow">→</span>
+      </a></li>
+
+      <li><a href="realtime_date.html">
+        <span class="nomor">7</span>
+        <div class="info">
+          <div class="judul">Tanggal & Jam Real Time</div>
+          <div class="desc">Detak jam live</div>
+        </div>
+        <span class="arrow">→</span>
+      </a></li>
+
+      <li><a href="ajax.html">
+        <span class="nomor">8</span>
+        <div class="info">
+          <div class="judul">AJAX dan jQuery</div>
+          <div class="desc">Manipulasi tanpa reload</div>
+        </div>
+        <span class="arrow">→</span>
+      </a></li>
+
+      <li><a href="jquery.html">
+        <span class="nomor">9</span>
+        <div class="info">
+          <div class="judul">Menu dengan jQuery</div>
+          <div class="desc">Dropdown & navigasi</div>
+        </div>
+        <span class="arrow">→</span>
+      </a></li>
+
+      <li><a href="dialog_box.html">
+        <span class="nomor">10</span>
+        <div class="info">
+          <div class="judul">Basic Dialog jQuery UI</div>
+          <div class="desc">Modal dialog</div>
+        </div>
+        <span class="arrow">→</span>
+      </a></li>
+
+      <li><a href="dialog_download.html">
+        <span class="nomor">11</span>
+        <div class="info">
+          <div class="judul">Download Dialog + Progressbar</div>
+          <div class="desc">Simulasi progress download</div>
+        </div>
+        <span class="arrow">→</span>
+      </a></li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    Praktikum 7 - Dinda Aulia - 253307011
+  </div>
+</div>
+</body>
+</html>

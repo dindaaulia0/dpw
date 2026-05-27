@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+  <TITLE>Basic Dialog jQuery UI</TITLE>
+  <LINK rel="icon" type="img/png" href="gambar/pnm.png" sizes="16x16" />
+  <LINK rel="stylesheet" href="style.css">
+  <LINK rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.min.css">
+  <SCRIPT src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></SCRIPT>
+  <SCRIPT src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></SCRIPT>
+  <STYLE>
+    .ui-dialog-titlebar { background: #2a5298 !important; color: white !important; }
+    .ui-dialog-title    { color: white !important; }
+    .ui-dialog-buttonset .ui-button {
+      background: #4a7fd4; color: white; border: none;
+      border-radius: 4px; padding: 7px 16px;
+    }
+    .ui-dialog-buttonset .ui-button:hover { background: #2a5298; }
+  </STYLE>
+</HEAD>
+<BODY>
+  <DIV class="kotak">
+    <H2>Basic Dialog dengan jQuery UI</H2>
+    <P>Klik tombol di bawah untuk membuka jendela dialog.</P>
+    <BUTTON id="bukaDialog">Buka Dialog</BUTTON>
+    <P><A href="index.html">← Kembali</A></P>
+  </DIV>
+
+  <DIV id="myDialog" title="Informasi" style="display:none;">
+    <P>Ini adalah contoh <B>Basic Dialog</B> menggunakan jQuery UI.</P>
+    <P>Dialog ini bersifat modal dan dapat ditutup dengan tombol di bawah.</P>
+  </DIV>
+
+  <SCRIPT>
+    $(document).ready(function() {
+      $("#myDialog").dialog({
+        autoOpen : false,
+        modal    : true,
+        width    : 380,
+        buttons  : {
+          "Tutup": function() { $(this).dialog("close"); }
+        }
+      });
+      $("#bukaDialog").click(function() {
+        $("#myDialog").dialog("open");
+      });
+    });
+  </SCRIPT>
+</BODY>
+</HTML>

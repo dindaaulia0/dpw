@@ -13,9 +13,29 @@ Proyek ini dibuat untuk memenuhi tugas mata kuliah **Desain dan Pemrograman Web*
 
 Repository ini berisi kode dan dokumentasi seputar pembelajaran desain dan pemrograman web, mencakup HTML, CSS, JavaScript, serta implementasi konsep pemrograman web lainnya.
 
+## Materi Praktikum
+
+- HTML Dasar
+- CSS Dasar
+- JavaScript Dasar
+- Bootstrap
+- Form Handling PHP
+- CRUD PHP & MySQL
+- Upload File
+- Session & Cookies
+- JSON pada PHP
+- Object Oriented Programming (OOP)
+- Validasi Form
+- Galeri Gambar
+
+---
+
 ## Teknologi yang Digunakan
 
 - HTML5
-- CSS
+- CSS3
 - JavaScript
 - Bootstrap
+- PHP
+- MySQL
+- XAMPP
